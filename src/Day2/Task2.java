@@ -1,6 +1,6 @@
 package Day2;
-
 import java.util.Scanner;
+//Martin
 public class Task2 {
     public static void main(String[] args) {
 
