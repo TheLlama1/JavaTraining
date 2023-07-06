@@ -10,5 +10,6 @@ public class homework1 {
              System.out.println(words);
          }
         }
+
     }
 }
