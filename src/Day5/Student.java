@@ -15,54 +15,72 @@ public class Student {
     public String getName(){
         return this.name;
     }
-    public String setName(String name){
-        return name;
+
+    public void setName(String name){
+        this.name = name;
     }
+
     public String getGender(String gender){
         return gender;
     }
-    public String setGender(String gender){
-        if(gender.equals("Male") || gender.equals("male") || gender.equals("Female") || gender.equals("female")){
-            return gender;
-        }else{
-            throw new IllegalArgumentException("Wrong value!");
-        }
+
+    public void setGender(String gender){
+           if(gender.equals("Male") || gender.equals("male") || gender.equals("Female") || gender.equals("female")){
+               this.gender = gender;
+           }else{
+               throw new IllegalArgumentException("Wrong value!");
+           }
     }
+
     public int getID(int id){
         return id;
     }
-    public int setID(int id){
-        return id;
+
+    public void setID(int id){
+        this.ID = id;
     }
+
     public int getKlas(int clas){
+        return clas;
+    }
+
+    public void setKlas(int clas){
         if(clas > 12 || clas < 1){
             throw new IllegalArgumentException("Wrong value!");
         }
-            return clas;
+            this.klas = clas;
     }
     public int getNumberInClass(int numInClass){
         return numInClass;
     }
-    public int setNumInClass(int numInClass){
+    public void setNumberInClass(int numInClass){
         if(numInClass < 1){
             throw new IllegalArgumentException("Wrong value!");
+        }else{
+            this.numberInClass = numInClass;
         }
-        return numInClass;
+    }
+
+    public double getGrade(double grade){
+        return grade;
+    }
+    public void setGrade(double grade){
+        this.grade = grade;
     }
     public Student(String name, String gender, int id, int clas, int numInClass, double grade){
-        this.name = name;
-        this.gender = gender;
-        this.ID = id;
-        this.klas = clas;
-        this.numberInClass = numInClass;
-
+        setName(name);
+        setGender(gender);
+        setID(id);
+        setKlas(clas);
+        setNumberInClass(numInClass);
+        setGrade(grade);
     }
     public void StudentInfo(){
         System.out.println("Name: " + this.name);
         System.out.println("Gender: " + this.gender);
         System.out.println("ID: " + this.ID);
         System.out.println("Class: " + this.klas);
-        System.out.println("Number in the class: " + this.klas);
+        System.out.println("Number in the class: " + this.numberInClass);
         System.out.println("Grade: " + this.grade);
     }
 
