@@ -20,7 +20,7 @@ public class Student {
         this.name = name;
     }
 
-    public String getGender(String gender){
+    public String getGender(){
         return gender;
     }
 
@@ -32,16 +32,16 @@ public class Student {
            }
     }
 
-    public int getID(int id){
-        return id;
+    public int getID(){
+        return ID;
     }
 
     public void setID(int id){
         this.ID = id;
     }
 
-    public int getKlas(int clas){
-        return clas;
+    public int getKlas(){
+        return klas;
     }
 
     public void setKlas(int clas){
@@ -50,8 +50,8 @@ public class Student {
         }
             this.klas = clas;
     }
-    public int getNumberInClass(int numInClass){
-        return numInClass;
+    public int getNumberInClass(){
+        return numberInClass;
     }
     public void setNumberInClass(int numInClass){
         if(numInClass < 1){
@@ -61,10 +61,16 @@ public class Student {
         }
     }
 
-
+    public double getSubjectGrade(){
+        return grade;
+    }
+    public void setGrade(double grade){
+        this.grade = grade;
+    }
     public void subjectGrade(String subject, double grade){
         System.out.print("Subject: " + subject + " Grade: " + grade + "\n");
     }
+
     public Student(String name, String gender, int id, int clas, int numInClass){
         setName(name);
         setGender(gender);
@@ -80,8 +86,4 @@ public class Student {
         System.out.println("Number in the class: " + this.numberInClass);
         System.out.println("Grade: " + this.grade);
     }
-
-
-
-
 }
