@@ -84,6 +84,5 @@ public class Student {
         System.out.println("ID: " + this.ID);
         System.out.println("Class: " + this.klas);
         System.out.println("Number in the class: " + this.numberInClass);
-        System.out.println("Grade: " + this.grade);
     }
 }

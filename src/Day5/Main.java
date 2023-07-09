@@ -1,5 +1,7 @@
 package Day5;
 
+import java.util.List;
+
 //Martin
 public class Main {
 
@@ -21,7 +23,6 @@ public class Main {
     public static void averageSalary(Teacher teacher1, Teacher teacher2){
         System.out.println((teacher1.salary + teacher2.salary)/2);
     }
-
     public static void main(String[] args) {
         System.out.print("Teachers");
         Teacher teacher1 = new Teacher("Naiden", "Male", 19412, "PGEE", "Geography", 1600);
@@ -30,6 +31,7 @@ public class Main {
         System.out.println("---------------------------------------");
         teacher2.TeacherInfo();
         System.out.println("---------------------------------------");
+        System.out.print("Average salary: ");
         averageSalary(teacher1, teacher2);
         System.out.println("---------------------------------------");
         System.out.println("Students");
