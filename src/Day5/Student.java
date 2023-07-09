@@ -61,19 +61,16 @@ public class Student {
         }
     }
 
-    public double getGrade(double grade){
-        return grade;
+
+    public void subjectGrade(String subject, double grade){
+        System.out.print("Subject: " + subject + " Grade: " + grade + "\n");
     }
-    public void setGrade(double grade){
-        this.grade = grade;
-    }
-    public Student(String name, String gender, int id, int clas, int numInClass, double grade){
+    public Student(String name, String gender, int id, int clas, int numInClass){
         setName(name);
         setGender(gender);
         setID(id);
         setKlas(clas);
         setNumberInClass(numInClass);
-        setGrade(grade);
     }
     public void StudentInfo(){
         System.out.println("Name: " + this.name);

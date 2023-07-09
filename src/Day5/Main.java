@@ -1,9 +1,11 @@
 package Day5;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 //Martin
 public class Main {
-    public void highestGrade(){
+
+    public void highestGrade(List<Student> student){
 
     }
 
@@ -21,11 +23,24 @@ public class Main {
         System.out.println("---------------------------------------");
         System.out.println("Students");
         System.out.println("---------------------------------------");
-        Student student1 = new Student("Dimitar", "Male", 10412, 10, 9, 5.41);
-        Student student2 = new Student("Lilqna", "Female", 41351, 10, 14, 5.53);
+        List<Person> people = new ArrayList<>();
+
+        Student student1 = new Student("Dimitar", "Male", 10412, 10, 9);
         student1.StudentInfo();
+        student1.subjectGrade("Math", 4.50);
+        student1.subjectGrade("Science", 4.50);
+        student1.subjectGrade("Geography", 6.00);
+        student1.subjectGrade("History", 5.00);
+
         System.out.println("---------------------------------------");
+
+        Student student2 = new Student("Lilqna", "Female", 41351, 10, 14);
         student2.StudentInfo();
+        student2.subjectGrade("Math", 5.00);
+        student2.subjectGrade("Science", 5.00);
+        student2.subjectGrade("Geography", 6.00);
+        student2.subjectGrade("History", 6.00);
+
         System.out.println("---------------------------------------");
     }
 }
