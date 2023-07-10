@@ -4,11 +4,11 @@ import java.util.Scanner;
 public class Homework2 {
     public static void oddOrEven(int num)
     {
-    if(num % 2 == 0){
+     if(num % 2 == 0){
         System.out.print(true);
-    }else if(num % 2 != 0){
+     }else if(num % 2 != 0){
         System.out.print(false);
-    }
+        }
     }
     public static void main(String[] args) {
       Scanner number = new Scanner(System.in);
