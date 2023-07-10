@@ -1,9 +1,8 @@
 package Day5;
 
-import java.util.SortedMap;
-import java.util.Spliterator;
+import java.util.*;
 
-public class Student {
+public class Student extends Person {
     String name;
     String gender;
     int ID;
@@ -71,12 +70,15 @@ public class Student {
         System.out.print("Subject: " + subject + " Grade: " + grade + "\n");
     }
 
-    public Student(String name, String gender, int id, int clas, int numInClass){
+
+
+    public Student(String name, String gender, int id, int clas, int numInClass, double grade){
         setName(name);
         setGender(gender);
         setID(id);
         setKlas(clas);
         setNumberInClass(numInClass);
+        setGrade(grade);
     }
     public void StudentInfo(){
         System.out.println("Name: " + this.name);

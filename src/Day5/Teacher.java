@@ -1,6 +1,6 @@
 package Day5;
 
-public class Teacher {
+public class Teacher extends Person {
     String name;
     String gender;
     int ID;
