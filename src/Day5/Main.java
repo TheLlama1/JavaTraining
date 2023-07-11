@@ -25,14 +25,23 @@ public class Main {
         System.out.println((teacher1.salary + teacher2.salary)/2);
     }
     public static void averageGrade(Student student1, Student student2){
-     double result =  student1.grade/2;
-     double result2 = student2.grade/2;
+     double result =  student1.grade;
+     double result2 = student2.grade;
      System.out.println("Dimitar average grade:" + result);
      System.out.println("---------------------------------------");
      System.out.println("Lilqna average grade:" + result2);
     }
     public static void averageClassGrade(Student student1, Student student2){
         System.out.println((student1.grade + student2.grade)/2);
+    }
+    public static void subjectHighestGrade(Student student1, Student student2){
+    student1.getSubjectGrade();
+    student2.getSubjectGrade();
+    if(student1.getSubjectGrade() > student2.getSubjectGrade()){
+        System.out.println("Dimitar has the highest grade in the subject!");
+    } else {
+        System.out.print("Lilqna has the highest grade in the subject!");
+    }
     }
     public static void main(String[] args) {
         System.out.print("Teachers");
@@ -48,10 +57,10 @@ public class Main {
         System.out.println("Students");
         System.out.println("---------------------------------------");
 
-        Student student1 = new Student("Dimitar", "Male", 10412, 10, 9, 5.25);
+        Student student1 = new Student("Dimitar", "Male", 10412, 10, 9, 4.75);
         student1.StudentInfo();
         List<Person> dataStructure = new ArrayList<>();
-        student1.subjectGrade("Math", 4.50);
+        student1.subjectGrade("Math", 3.50);
         student1.subjectGrade("Geography", 6.00);
 
         System.out.println("---------------------------------------");
@@ -70,6 +79,7 @@ public class Main {
         System.out.println("---------------------------------------");
         averageGrade(student1, student2);
         System.out.println("---------------------------------------");
+        subjectHighestGrade(student1, student2);
 
         dataStructure.add(student1);
         dataStructure.add(student2);
