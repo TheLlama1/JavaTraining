@@ -11,19 +11,19 @@ public class Student extends Person {
     double grade;
 
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
-    public String getGender(){
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(String gender){
+    public void setGender(String gender) {
            if(gender.equals("Male") || gender.equals("male") || gender.equals("Female") || gender.equals("female")){
                this.gender = gender;
            }else{
@@ -31,28 +31,28 @@ public class Student extends Person {
            }
     }
 
-    public int getID(){
+    public int getID() {
         return ID;
     }
 
-    public void setID(int id){
+    public void setID(int id) {
         this.ID = id;
     }
 
-    public int getKlas(){
+    public int getKlas() {
         return klas;
     }
 
-    public void setKlas(int clas){
+    public void setKlas(int clas) {
         if(clas > 12 || clas < 1){
             throw new IllegalArgumentException("Wrong value!");
         }
             this.klas = clas;
     }
-    public int getNumberInClass(){
+    public int getNumberInClass() {
         return numberInClass;
     }
-    public void setNumberInClass(int numInClass){
+    public void setNumberInClass(int numInClass) {
         if(numInClass < 1){
             throw new IllegalArgumentException("Wrong value!");
         }else{
@@ -60,19 +60,19 @@ public class Student extends Person {
         }
     }
 
-    public double getSubjectGrade(){
+    public double getSubjectGrade() {
         return grade;
     }
-    public void setGrade(double grade){
+    public void setGrade(double grade) {
         this.grade = grade;
     }
-    public void subjectGrade(String subject, double grade){
+    public void subjectGrade(String subject, double grade) {
         System.out.print("Subject: " + subject + " Grade: " + grade + "\n");
     }
 
 
 
-    public Student(String name, String gender, int id, int clas, int numInClass, double grade){
+    public Student(String name, String gender, int id, int clas, int numInClass, double grade) {
         setName(name);
         setGender(gender);
         setID(id);
@@ -80,7 +80,7 @@ public class Student extends Person {
         setNumberInClass(numInClass);
         setGrade(grade);
     }
-    public void StudentInfo(){
+    public void StudentInfo() {
         System.out.println("Name: " + this.name);
         System.out.println("Gender: " + this.gender);
         System.out.println("ID: " + this.ID);

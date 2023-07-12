@@ -14,30 +14,30 @@ public class Main {
             System.out.println("The person with the highest grade in the subject is " + student2.getName());
         }
     }
-        public static void lowestGrade (Student student1, Student student2){
+        public static void lowestGrade (Student student1, Student student2) {
             if (student1.getSubjectGrade() < student2.getSubjectGrade()) {
                 System.out.println("The person with the lowest grade in the subject is " + student2.getName());
             } else {
                 System.out.println("The person with the lowest grade in the subject is " + student1.getName());
             }
         }
-    public static void averageSalary(Teacher teacher1, Teacher teacher2){
+    public static void averageSalary(Teacher teacher1, Teacher teacher2) {
         System.out.println((teacher1.salary + teacher2.salary)/2);
     }
-    public static void averageGrade(Student student1, Student student2){
+    public static void averageGrade(Student student1, Student student2) {
      double result =  student1.grade;
      double result2 = student2.grade;
      System.out.println("Dimitar average grade:" + result);
      System.out.println("---------------------------------------");
      System.out.println("Lilqna average grade:" + result2);
     }
-    public static void averageClassGrade(Student student1, Student student2){
+    public static void averageClassGrade(Student student1, Student student2) {
         System.out.println((student1.grade + student2.grade)/2);
     }
-    public static void subjectHighestGrade(Student student1, Student student2){
+    public static void subjectHighestGrade(Student student1, Student student2) {
     student1.getSubjectGrade();
     student2.getSubjectGrade();
-    if(student1.getSubjectGrade() > student2.getSubjectGrade()){
+    if(student1.getSubjectGrade() > student2.getSubjectGrade()) {
         System.out.println("Dimitar has the highest grade in the subject!");
     } else {
         System.out.print("Lilqna has the highest grade in the subject!");
