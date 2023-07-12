@@ -40,9 +40,8 @@ public class Calculator {
             System.out.print(nums[0] - nums[1]);
         }else if(calculation.contains("*") || calculation.contains("multiply") || calculation.contains("Multiply")){
             System.out.println(nums[0] * nums[1]);
-        }else if(calculation.contains("/") || calculation.contains("divide") || calculation.contains("divide")){
+        }else if(calculation.contains("/") || calculation.contains("divide") || calculation.contains("Divide")){
             System.out.println(nums[0] / nums[1]);
         }
-
     }
 }
