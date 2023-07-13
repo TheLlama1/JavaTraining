@@ -1,90 +1,48 @@
 package Day5;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Student extends Person {
-    String name;
-    String gender;
-    int ID;
+public class Student extends Person{
     int klas;
     int numberInClass;
-    double grade;
-
-
-    public String getName() {
-        return this.name;
+    private final Map<String, Double> grade = new HashMap<>();
+    public Student(String name, String gender, int id, int numInClass, double grade){
+        super(name, gender, id);
+        this.klas = klas;
+        this.numberInClass = numInClass;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-           if(gender.equals("Male") || gender.equals("male") || gender.equals("Female") || gender.equals("female")){
-               this.gender = gender;
-           }else{
-               throw new IllegalArgumentException("Wrong value!");
-           }
-    }
-
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int id) {
-        this.ID = id;
-    }
-
-    public int getKlas() {
+    public int getKlas(){
         return klas;
     }
-
-    public void setKlas(int clas) {
-        if(clas > 12 || clas < 1){
-            throw new IllegalArgumentException("Wrong value!");
-        }
-            this.klas = clas;
+    public void setKlas(int clas){
+        this.klas = clas;
     }
-    public int getNumberInClass() {
+    public int getNumberInClass(){
         return numberInClass;
     }
-    public void setNumberInClass(int numInClass) {
-        if(numInClass < 1){
+    public void setNumberInClass(int numInClass){
+        if (numInClass < 1) {
             throw new IllegalArgumentException("Wrong value!");
-        }else{
+        } else {
             this.numberInClass = numInClass;
         }
     }
-
-    public double getSubjectGrade() {
+    public Map<String, Double> getGrade() {
         return grade;
     }
-    public void setGrade(double grade) {
-        this.grade = grade;
+    public void setGrade(double grade, String nameOfTheSubject){
+        this.grade.put(nameOfTheSubject, grade);
     }
-    public void subjectGrade(String subject, double grade) {
-        System.out.print("Subject: " + subject + " Grade: " + grade + "\n");
-    }
-
-
-
-    public Student(String name, String gender, int id, int clas, int numInClass, double grade) {
-        setName(name);
-        setGender(gender);
-        setID(id);
-        setKlas(clas);
-        setNumberInClass(numInClass);
-        setGrade(grade);
-    }
-    public void StudentInfo() {
-        System.out.println("Name: " + this.name);
-        System.out.println("Gender: " + this.gender);
-        System.out.println("ID: " + this.ID);
-        System.out.println("Class: " + this.klas);
-        System.out.println("Number in the class: " + this.numberInClass);
+    @Override
+    public String toString() {
+        return "Student{" +
+                "Class: " + getKlas() +
+                ", Number in class: " + getNumberInClass() +
+                ", Grade: " + getGrade() +
+                ", Name: " + getName() + '\'' +
+                ", Grade: " + getGender() + '\'' +
+                ", ID: " + getID() +
+                '}';
     }
 }
