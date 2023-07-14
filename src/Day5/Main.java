@@ -31,6 +31,7 @@ public class Main {
         }
         return studentWithHighestGrade;
     }
+
     public static Student getClassStudentWithLowestGrade(List<Person> dataStructure, String subject) {
         double lowestGrade = 6.00;
         Student studentWithLowestGrade = null;
@@ -48,6 +49,7 @@ public class Main {
         }
         return studentWithLowestGrade;
     }
+
     public static double averageGrade(int allSubjects, double allGrades) {
         return allGrades / allSubjects;
     }
