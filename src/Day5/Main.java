@@ -14,24 +14,6 @@ public class Main {
         }
     }
 
-    public static Student getStudentHighestGrade(Student student, double grade, double currentHighestGrade){
-        Student temporary = null;
-        if(grade > currentHighestGrade){
-            currentHighestGrade = grade;
-            temporary = student;
-        }
-        return temporary;
-    }
-
-    public static Student getStudentLowestGrade(Student student, double grade, double currentLowestGrade){
-        Student temporary = null;
-        if(grade < currentLowestGrade){
-            currentLowestGrade = grade;
-            temporary = student;
-        }
-        return temporary;
-    }
-
     public static Student getClassStudentWithHighestGrade(List<Person> dataStructure, String subject){
         Student studentWithHighestGrade = null;
         double highestGrade = 2.00;
@@ -40,13 +22,32 @@ public class Main {
                 Student student = (Student) person;
                 if (student.getGrade().containsKey(subject)) {
                     double grade = student.getGrade().get(subject);
-                    studentWithHighestGrade = getStudentHighestGrade(student, grade, highestGrade);
+                    if(grade > highestGrade){
+                        studentWithHighestGrade = student;
+                        highestGrade = grade;
+                    }
                 }
             }
         }
         return studentWithHighestGrade;
     }
-
+    public static Student getClassStudentWithLowestGrade(List<Person> dataStructure, String subject) {
+        double lowestGrade = 6.00;
+        Student studentWithLowestGrade = null;
+        for (Person person : dataStructure) {
+            if (person instanceof Student) {
+                Student student = (Student) person;
+                if (student.getGrade().containsKey(subject)) {
+                    double grade = student.getGrade().get(subject);
+                    if (grade < lowestGrade) {
+                        studentWithLowestGrade = student;
+                        lowestGrade = grade;
+                    }
+                }
+            }
+        }
+        return studentWithLowestGrade;
+    }
     public static double averageGrade(int totalSubjects, double totalGrades) {
         return totalGrades / totalSubjects;
     }
@@ -71,7 +72,6 @@ public class Main {
             }
         }
         return averageGrade(studentCount, totalGrades);
-
     }
 
     public static void findTeachers(Map<Teacher, Double> teacherGrades, List<Person> dataStructure) {
@@ -140,7 +140,7 @@ public class Main {
         List<Person> People = new ArrayList<>();
 
         Student student1 = new Student("Dimitar", "Male", 19480, 10, 10);
-        student1.setGrade(6.00, "Geography");
+        student1.setGrade(5.50, "Geography");
         student1.setGrade(4.20, "Chemistry");
         student1.setGrade(6.00, "PE");
         student1.setGrade(3.50, "Math");
@@ -149,7 +149,7 @@ public class Main {
         student2.setGrade(5.00, "Geography");
         student2.setGrade(5.20, "Chemistry");
         student2.setGrade(6.00, "PE");
-        student2.setGrade(4.50, "Math");
+        student2.setGrade(4.70, "Math");
 
         Student student3 = new Student("Gumzata", "Male", 51230, 4, 11);
         student3.setGrade(6.00, "Geography");
@@ -185,6 +185,22 @@ public class Main {
 
         Student highestGrade4 = getClassStudentWithHighestGrade(People, "PE");
         System.out.println("The student with the highest grade in PE is " + highestGrade4.getName());
+        System.out.println("----------------------------");
+
+        Student lowestGrade1 = getClassStudentWithLowestGrade(People, "Math");
+        System.out.println("The student with the lowest grade in Math is: " + lowestGrade1.getName());
+        System.out.println("----------------------------");
+
+        Student lowestGrade2 = getClassStudentWithLowestGrade(People, "Chemistry");
+        System.out.println("The student with the lowest grade in Chemistry is " + lowestGrade2.getName());
+        System.out.println("----------------------------");
+
+        Student lowestGrade3 = getClassStudentWithLowestGrade(People, "Geography");
+        System.out.println("The student with the lowest grade in Geography is " + lowestGrade3.getName());
+        System.out.println("----------------------------");
+
+        Student lowestGrade4 = getClassStudentWithLowestGrade(People, "PE");
+        System.out.println("The student with the lowest grade in PE is " + lowestGrade4.getName());
         System.out.println("----------------------------");
 
         double avgSalary = averageSalary(teacher1, teacher2, teacher3);
