@@ -7,7 +7,7 @@ public class Student extends Person{
     int klas;
     int numberInClass;
     private final Map<String, Double> grade = new HashMap<>();
-    public Student(String name, String gender, int id, int numInClass, double grade){
+    public Student(String name, String gender, int id, int numInClass, int klas){
         super(name, gender, id);
         this.klas = klas;
         this.numberInClass = numInClass;
