@@ -41,11 +41,6 @@ public class Teacher extends Person{
         this.salary = salary;
     }
 
-    public String teacherInfo(){
-        return "Teacher name: " + getName() + "\nGender: " + getGender() + "\nID: " + getID() +
-                "\nSchool:" + getSchool() + "\nSubjects: " + getSubjects() + "\nSalary: " + getSalary();
-    }
-
     @Override
     public String toString() {
         return "Teacher{" +
