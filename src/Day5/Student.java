@@ -22,11 +22,7 @@ public class Student extends Person{
         return numberInClass;
     }
     public void setNumberInClass(int numInClass){
-        if (numInClass < 1) {
-            throw new IllegalArgumentException("Wrong value!");
-        } else {
-            this.numberInClass = numInClass;
-        }
+         this.numberInClass = numInClass;
     }
     public Map<String, Double> getGrade() {
         return grade;

@@ -48,8 +48,8 @@ public class Main {
         }
         return studentWithLowestGrade;
     }
-    public static double averageGrade(int totalSubjects, double totalGrades) {
-        return totalGrades / totalSubjects;
+    public static double averageGrade(int allSubjects, double allGrades) {
+        return allGrades / allSubjects;
     }
 
     public static double getAverageGrade(Student student) {
@@ -86,11 +86,10 @@ public class Main {
         for (Person person : dataStructure) {
             if (person instanceof Student) {
                 Student student = (Student) person;
-                for (Map.Entry<Teacher, Double> entry : teacherGrades.entrySet()) {
-                    Teacher teacher = entry.getKey();
-                    double totalGrade = entry.getValue() + student.getGrade().values().stream().mapToDouble(Double::doubleValue).sum();
+                for (Teacher teacher : teacherGrades.keySet()) {
+                    double totalGrade = teacherGrades.get(teacher) + student.getGrade().values().stream().mapToDouble(Double::doubleValue).sum();
                     teacherGrades.put(teacher, totalGrade);
-                }
+                 }
             }
         }
     }
